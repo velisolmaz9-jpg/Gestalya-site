@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-offwhite text-navy-900 font-sans antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-heading;
+}
+
+:focus-visible {
+  outline: 2px solid #b8974e;
+  outline-offset: 2px;
+}
