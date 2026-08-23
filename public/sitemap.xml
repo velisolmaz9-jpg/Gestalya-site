@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.votre-domaine.fr/</loc>
+    <loc>https://gestalya.fr/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.votre-domaine.fr/nos-services</loc>
+    <loc>https://gestalya.fr/nos-services</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.votre-domaine.fr/contact</loc>
+    <loc>https://gestalya.fr/contact</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.votre-domaine.fr/mentions-legales</loc>
+    <loc>https://gestalya.fr/mentions-legales</loc>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.votre-domaine.fr/politique-de-confidentialite</loc>
+    <loc>https://gestalya.fr/politique-de-confidentialite</loc>
     <priority>0.3</priority>
   </url>
 </urlset>

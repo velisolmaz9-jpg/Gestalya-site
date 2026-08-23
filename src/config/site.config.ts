@@ -11,10 +11,9 @@ export const siteConfig = {
   whatsappNumber: "+33 6 59 83 36 85",
 
   // Adresse e-mail professionnelle liée au nom de domaine OVH.
-  // Remplacez "contact@MONDOMAINE.FR" par votre véritable adresse.
-  email: "contact@MONDOMAINE.FR",
+  email: "contact@gestalya.fr",
 
-  // Liens réseaux sociaux. Remplacez par vos véritables liens.
+  // Liens réseaux sociaux. Remplacez par vos véritables liens dès qu'ils sont créés.
   social: {
     instagram: "https://instagram.com/REMPLACER_PAR_VOTRE_COMPTE",
     facebook: "https://facebook.com/REMPLACER_PAR_VOTRE_PAGE",

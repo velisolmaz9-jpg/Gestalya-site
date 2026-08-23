@@ -94,17 +94,15 @@ whatsappNumber: "+33 6 59 83 36 85",
 
 Tous les boutons du site (« Être accompagné », « Contacter Gestalya », bouton flottant, etc.) utilisent automatiquement ce numéro via `src/lib/whatsapp.ts`.
 
-### 3. L'adresse e-mail
+### 3. L'adresse e-mail ✅ déjà configurée
 
-Toujours dans `src/config/site.config.ts` :
+`src/config/site.config.ts` utilise désormais `contact@gestalya.fr`. Si cette adresse change un jour, c'est le seul endroit à modifier.
 
-```ts
-email: "contact@MONDOMAINE.FR",
-```
+### 4. Le nom de domaine ✅ déjà configuré
 
-Remplacez par votre véritable adresse liée à votre nom de domaine OVH (ex. `contact@gestalya.fr`).
+Le domaine `https://gestalya.fr` est déjà en place dans `index.html` (canonical, Open Graph, JSON-LD), `public/robots.txt` et `public/sitemap.xml`. Si vous préférez servir le site sur `www.gestalya.fr`, remplacez les occurrences de `gestalya.fr` par `www.gestalya.fr` dans ces mêmes fichiers et configurez la redirection correspondante chez OVH.
 
-### 4. Les liens Instagram / Facebook
+### 5. Les liens Instagram / Facebook ⏳ en attente de vos liens réels
 
 Toujours dans `src/config/site.config.ts` :
 
@@ -115,14 +113,24 @@ social: {
 },
 ```
 
-### 5. Avant la mise en ligne — à compléter impérativement
+Ces deux valeurs sont encore des placeholders : je n'ai pas inventé de faux comptes. Remplacez-les par vos URLs réelles dès que vous me les communiquez (ou directement dans ce fichier).
 
-- **Mentions légales** (`src/pages/LegalNotice.tsx`) : forme juridique, SIREN/SIRET, adresse du siège, hébergeur.
-- **Politique de confidentialité** (`src/pages/PrivacyPolicy.tsx`) : durée de conservation des données, et relecture par un professionnel du droit recommandée.
-- **Nom de domaine réel** : remplacez `https://www.votre-domaine.fr` par votre domaine dans `index.html` (canonical, Open Graph, JSON-LD), `public/robots.txt` et `public/sitemap.xml`.
+### 6. Avant la mise en ligne — informations juridiques manquantes
+
+Aucune information juridique n'a été inventée. Les pages **Mentions légales** (`src/pages/LegalNotice.tsx`) et **Politique de confidentialité** (`src/pages/PrivacyPolicy.tsx`) contiennent des `[À COMPLÉTER]` explicites pour :
+
+- Forme juridique de l'entreprise (auto-entreprise, SASU, EURL, etc.)
+- Numéro SIREN / SIRET
+- Adresse du siège social
+- Nom du responsable de la publication
+- Nom et adresse de l'hébergeur du site (une fois choisi)
+- Durée précise de conservation des données personnelles
+
+Une relecture par un professionnel du droit est recommandée pour la politique de confidentialité avant publication.
+
 - **Image Open Graph** : ajoutez une image `public/og-image.jpg` (1200×630 px) pour un aperçu soigné lors des partages sur les réseaux sociaux.
 
-### 6. Avis clients
+### 7. Avis clients
 
 Dès que vous recevrez de vrais avis, ajoutez-les dans `src/data/testimonials.ts` (aucun faux avis n'a été inséré). La section s'actualise automatiquement dès que ce tableau n'est plus vide.
 
