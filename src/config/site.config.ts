@@ -13,10 +13,10 @@ export const siteConfig = {
   // Adresse e-mail professionnelle liée au nom de domaine OVH.
   email: "contact@gestalya.fr",
 
-  // Liens réseaux sociaux. Remplacez par vos véritables liens dès qu'ils sont créés.
+  // Liens réseaux sociaux officiels de Gestalya.
   social: {
-    instagram: "https://instagram.com/REMPLACER_PAR_VOTRE_COMPTE",
-    facebook: "https://facebook.com/REMPLACER_PAR_VOTRE_PAGE",
+    instagram: "https://www.instagram.com/gestalya/",
+    facebook: "https://www.facebook.com/profile.php?id=61593830663043",
   },
 
   price: {

@@ -102,18 +102,18 @@ Tous les boutons du site (« Être accompagné », « Contacter Gestalya », bou
 
 Le domaine `https://gestalya.fr` est déjà en place dans `index.html` (canonical, Open Graph, JSON-LD), `public/robots.txt` et `public/sitemap.xml`. Si vous préférez servir le site sur `www.gestalya.fr`, remplacez les occurrences de `gestalya.fr` par `www.gestalya.fr` dans ces mêmes fichiers et configurez la redirection correspondante chez OVH.
 
-### 5. Les liens Instagram / Facebook ⏳ en attente de vos liens réels
+### 5. Les liens Instagram / Facebook ✅ déjà configurés
 
-Toujours dans `src/config/site.config.ts` :
+`src/config/site.config.ts` pointe désormais vers les pages officielles :
 
 ```ts
 social: {
-  instagram: "https://instagram.com/REMPLACER_PAR_VOTRE_COMPTE",
-  facebook: "https://facebook.com/REMPLACER_PAR_VOTRE_PAGE",
+  instagram: "https://www.instagram.com/gestalya/",
+  facebook: "https://www.facebook.com/profile.php?id=61593830663043",
 },
 ```
 
-Ces deux valeurs sont encore des placeholders : je n'ai pas inventé de faux comptes. Remplacez-les par vos URLs réelles dès que vous me les communiquez (ou directement dans ce fichier).
+Utilisés automatiquement dans le footer (icônes) et partout où `siteConfig.social` est référencé.
 
 ### 6. Avant la mise en ligne — informations juridiques manquantes
 
