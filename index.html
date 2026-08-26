@@ -3,6 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Contrepartie de public/404.html : restaure la véritable URL (ex:
+      /contact) avant que React ne s'affiche, quand GitHub Pages a
+      redirigé une navigation directe via la query string. Aucun effet
+      sur le fonctionnement normal du site (dev local, Vercel, etc.).
+    -->
+    <script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
     <title>Gestalya | Assistance administrative simple et personnalisée</title>
     <meta
       name="description"

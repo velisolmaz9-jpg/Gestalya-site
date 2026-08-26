@@ -70,6 +70,21 @@ npm run preview
 
 Le dossier `dist/` peut ensuite être déployé sur n'importe quel hébergeur statique (OVH, Netlify, Vercel, etc.).
 
+## Déploiement sur GitHub Pages
+
+Le projet est configuré pour être publié automatiquement sur GitHub Pages via GitHub Actions (`.github/workflows/deploy-pages.yml`) : chaque push sur la branche configurée déclenche un build (`npm ci && npm run build`) puis une publication du dossier `dist/`.
+
+**À faire une seule fois dans les réglages GitHub du dépôt** (Settings → Pages) :
+1. Dans « Build and deployment » → « Source », sélectionner **GitHub Actions** (et non « Deploy from a branch »).
+2. Une fois le premier run du workflow terminé (onglet **Actions** du dépôt), l'URL `https://<votre-compte>.github.io/<dépôt>/` devient active.
+3. Pour le domaine personnalisé `gestalya.fr` : le fichier `public/CNAME` est déjà en place et sera copié dans `dist/` à chaque build, donc GitHub Pages reconnaîtra ce domaine dès que le DNS pointera vers GitHub Pages. **Aucune configuration DNS n'a été effectuée par ce changement** — c'est une étape séparée, à faire chez IONOS quand vous serez prêt (enregistrements `A`/`ALIAS` vers les IP de GitHub Pages, ou `CNAME` pour un sous-domaine `www`).
+
+**Particularités techniques pour une SPA React Router sur un hébergement 100 % statique** (GitHub Pages ne fait aucune réécriture d'URL côté serveur) :
+- `vite.config.ts` : `base: "/"`, correct pour un domaine personnalisé servi à la racine.
+- `public/404.html` : GitHub Pages sert ce fichier pour toute URL inconnue (ex. `/contact` en accès direct ou après rafraîchissement) ; un petit script encode le chemin demandé et redirige vers `index.html`.
+- `index.html` : un script symétrique restaure la vraie URL (`/contact`) via `history.replaceState` avant que React ne s'affiche.
+- Ce mécanisme (technique standard « spa-github-pages ») a été testé avec un serveur statique strict reproduisant le comportement de GitHub Pages : navigation directe vers `/contact`, `/nos-services` et `/mentions-legales` toutes fonctionnelles, URL restaurée proprement, aucune modification visuelle ou fonctionnelle du site.
+
 ## Personnalisation — ce que vous devez modifier
 
 ### 1. Le logo
